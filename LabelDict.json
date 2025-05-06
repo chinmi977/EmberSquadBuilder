@@ -1,0 +1,54 @@
+{
+    "en":{
+        "label_faction":"Faction",
+        "label_language":"Language",
+        "label_type":"Type",
+        "label_point":"Point",
+        "label_torso":"Torso",
+        "label_chasis":"Chasis",
+        "label_leftarm":"Left Arm",
+        "label_rightarm":"Right Arm",
+        "label_backpack":"Backpack",
+        "label_pilot":"Pilot",
+        "label_drone":"Drone"
+    },
+    "ja":{
+        "label_faction":"勢力",
+        "label_language":"言語",
+        "label_type":"種類",
+        "label_point":"ポイント",
+        "label_torso":"胴体",
+        "label_chasis":"下肢",
+        "label_leftarm":"左腕",
+        "label_rightarm":"右腕",
+        "label_backpack":"バックパック",
+        "label_pilot":"パイロット",
+        "label_drone":"ドローン"
+    },
+    "zh-CN":{
+        "label_faction":"Faction",
+        "label_language":"Language",
+        "label_type":"Type",
+        "label_point":"Point",
+        "label_torso":"Torso",
+        "label_chasis":"Chasis",
+        "label_leftarm":"Left Arm",
+        "label_rightarm":"Right Arm",
+        "label_backpack":"Backpack",
+        "label_pilot":"Pilot",
+        "label_drone":"Drone"
+    },
+    "zh-TW":{
+        "label_faction":"Faction",
+        "label_language":"Language",
+        "label_type":"Type",
+        "label_point":"Point",
+        "label_torso":"Torso",
+        "label_chasis":"Chasis",
+        "label_leftarm":"Left Arm",
+        "label_rightarm":"Right Arm",
+        "label_backpack":"Backpack",
+        "label_pilot":"Pilot",
+        "label_drone":"Drone"
+    }
+}

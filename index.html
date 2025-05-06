@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ember Squad Builder</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+  <nav class="level is-mobile">
+    <div class="level-left">
+      <div class="level-item">
+        <label class="label" id="label_faction">Faction</label>
+        <p class="select is-danger">
+          <select id="select_faction" disabled><!--Remove 'disabled' when adding other PartsData.-->
+            <option value="RDL">RDL</option>
+            <option value="UN">UN(🚧)</option>
+            <option value="GoF">Gof(🚧)</option>
+          </select>
+        </p>
+      </div>
+    </div>
+    <div class="level-right">
+      <div class="level-item">
+        <label class="label" id="label_language">Language</label>
+        <p class="select is-small is-primary">
+          <select id="select_language">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="zh-CN">Simplified Chinese(🚧)</option>
+            <option value="zh-TW">Traditional Chinese(🚧)</option>
+          </select>
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <div class="grid">
+    <div id="select_type" class="cell">
+      <label class="label" id="label_type">Type</label>
+      <div class="field is-narrow">
+        <div class="control">
+          <form id="radio_type">
+            <label class="radio"><input type="radio" name="type" value="mech" checked />Mech</label>
+            <label class="radio"><input type="radio" name="type" value="drone" />Drone</label>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="point_view" class="cell">
+      <div class="fixed-grid">
+        <div class="grid">
+          <p class="cell has-text-right is-size-5" id="label_point">Point</p>
+          <p class="cell is-size-3 has-text-weight-bold" id="value_point"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="type_mech">
+    <label class="label" id="label_torso">Torso</label>
+    <div class="field has-addons">
+      <p class="control">
+        <div class="select is-fullwidth">
+          <select id="select_torso">
+          </select>
+        </div>
+      </p>
+      <p class="control">
+        <button class="button" id="button_info_torso">Info</button>
+      </p>
+    </div>
+
+    <label class="label" id="label_chasis">Chasis</label>
+    <div class="field has-addons">
+      <p class="control">
+        <div class="select is-fullwidth">
+          <select id="select_chasis">
+          </select>
+        </div>
+      </p>
+      <p class="control">
+        <button class="button" id="button_info_chasis">Info</button>
+      </p>
+    </div>
+
+    <label class="label" id="label_leftarm">LeftArm</label>
+    <div class="field has-addons">
+      <p class="control">
+        <div class="select is-fullwidth">
+          <select id="select_leftarm">
+          </select>
+        </div>
+      </p>
+      <p class="control">
+        <button class="button" id="button_info_leftarm">Info</button>
+      </p>
+    </div>
+
+    <label class="label" id="label_rightarm">RightArm</label>
+    <div class="field has-addons">
+      <p class="control">
+        <div class="select is-fullwidth">
+          <select id="select_rightarm">
+          </select>
+        </div>
+      </p>
+      <p class="control">
+        <button class="button" id="button_info_rightarm">Info</button>
+      </p>
+    </div>
+
+    <label class="label" id="label_backpack">BackPack</label>
+    <div class="field has-addons">
+      <p class="control">
+        <div class="select is-fullwidth">
+          <select id="select_backpack">
+          </select>
+        </div>
+      </p>
+      <p class="control">
+        <button class="button" id="button_info_backpack">Info</button>
+      </p>
+    </div>
+
+    <label class="label" id="label_pilot">Pilot</label>
+    <div class="field has-addons">
+      <p class="control">
+        <div class="select is-fullwidth">
+          <select id="select_pilot">
+          </select>
+        </div>
+      </p>
+      <p class="control">
+        <button class="button" id="button_info_pilot">Info</button>
+      </p>
+    </div>
+  </div>
+
+  <div id="type_drone">
+    <label class="label" id="label_drone">Drone</label>
+    <div class="field has-addons">
+      <p class="control">
+        <div class="select is-fullwidth">
+          <select id="select_drone">
+          </select>
+        </div>
+      </p>
+      <p class="control">
+        <button class="button" id="button_info_drone">Info</button>
+      </p>
+    </div>
+  </div>
+</body>
+<script>
+  const PART_DATA_SEPARATOR = '_';
+  const PART_DATA_BASE_NAME = 'PartsData';
+  let partData;
+  async function calcPoint() {
+    const elemSelect = document.getElementById( 'select_torso');
+    const elemChasis = document.getElementById( 'select_chasis');
+    const elemLeftArm = document.getElementById( 'select_leftarm');
+    const elemRightArm = document.getElementById( 'select_rightarm');
+    const elemBackPack = document.getElementById( 'select_backpack');
+    const elemPilot = document.getElementById( 'select_pilot');
+    const elemDrone = document.getElementById( 'select_drone');
+    const typeNodeList = document.getElementById('radio_type')['type'];
+    const typeValue = typeNodeList.value;
+    const elemPoint = document.getElementById( 'value_point');
+    let point = 0;
+    if( typeValue === 'mech') {
+      point = 
+        Number( elemSelect.options[elemSelect.selectedIndex].value) +
+        Number( elemChasis.options[elemChasis.selectedIndex].value) +
+        Number( elemLeftArm.options[elemLeftArm.selectedIndex].value) +
+        Number( elemRightArm.options[elemRightArm.selectedIndex].value) +
+        Number( elemBackPack.options[elemBackPack.selectedIndex].value) +
+        Number( elemPilot.options[elemPilot.selectedIndex].value);
+    }
+    else{
+      point = Number( elemDrone.options[elemDrone.selectedIndex].value);
+    }
+    console.log( point);
+    elemPoint.replaceChildren();
+    elemPoint.innerText = point;
+  }
+  async function replacePartsOptions( targetId, partsData) {
+    const elemSelect = document.getElementById( targetId);
+    elemSelect.replaceChildren();
+    partsData.forEach( part => {
+      const appendOption = document.createElement( 'option');
+      appendOption.text = part.name + ' (point: ' + part.point + ')';
+      appendOption.value = part.point;
+      const qridItem = document.createAttribute('qrid');
+      qridItem.value = part.id;
+      appendOption.attributes.setNamedItem(qridItem);
+      elemSelect.appendChild( appendOption)
+    });
+  }
+  async function changeType() {
+    const typeNodeList = document.getElementById('radio_type')['type'];
+    const typeValue = typeNodeList.value;
+    const elemMech = document.getElementById( 'type_mech');
+    const elemDrone = document.getElementById( 'type_drone');
+    if( typeValue === 'mech') {
+      elemMech.classList.remove( 'is-hidden');
+      elemDrone.classList.add( 'is-hidden');
+    }
+    else{
+      elemMech.classList.add( 'is-hidden');
+      elemDrone.classList.remove( 'is-hidden');
+    }
+    calcPoint();
+  }
+  async function changePartsData( language, faction) {
+    const filename = PART_DATA_BASE_NAME + PART_DATA_SEPARATOR + faction + PART_DATA_SEPARATOR + language + '.json'
+    console.log( filename);
+    try{
+      const response = await fetch(filename);
+      if (!response.ok) {
+        throw new Error('Cannot find parts data file.(maybe under construction)');
+      }
+      partData = await response.json();
+    }
+    catch( error) {
+      console.error( 'error: ', error.message);
+      window.alert( error.message);
+      throw error;
+    }
+    await replacePartsOptions( 'select_torso', partData.Torso);
+    await replacePartsOptions( 'select_chasis', partData.Chasis);
+    await replacePartsOptions( 'select_leftarm', partData.LeftArm);
+    await replacePartsOptions( 'select_rightarm', partData.RightArm);
+    await replacePartsOptions( 'select_backpack', partData.BackPack);
+    await replacePartsOptions( 'select_pilot', partData.Pilot);
+    await replacePartsOptions( 'select_drone', partData.Drone);
+    await changeType();
+    await calcPoint();
+  }
+  async function changeLanguage(event){
+    const language = event.currentTarget.value;
+    const faction = document.getElementById('select_faction').value;
+    await changePartsData( language, faction);
+
+    const filename = 'LabelDict.json'
+    let langData;
+    try{
+      const response = await fetch(filename);
+      if (!response.ok) {
+        throw new Error('Cannot find Label Dictionary file.(Oops!)');
+      }
+      langData = await response.json();
+    }
+    catch( error) {
+      console.error( 'error: ', error.message);
+      window.alert( error.message);
+      throw error;
+    }
+    document.getElementById( 'label_faction').replaceChildren();
+    document.getElementById( 'label_faction').innerText = langData[language].label_faction;
+    document.getElementById( 'label_language').replaceChildren();
+    document.getElementById( 'label_language').innerText = langData[language].label_language;
+    document.getElementById( 'label_type').replaceChildren();
+    document.getElementById( 'label_type').innerText = langData[language].label_type;
+    document.getElementById( 'label_point').replaceChildren();
+    document.getElementById( 'label_point').innerText = langData[language].label_point;
+    document.getElementById( 'label_torso').replaceChildren();
+    document.getElementById( 'label_torso').innerText = langData[language].label_torso;
+    document.getElementById( 'label_chasis').replaceChildren();
+    document.getElementById( 'label_chasis').innerText = langData[language].label_chasis;
+    document.getElementById( 'label_leftarm').replaceChildren();
+    document.getElementById( 'label_leftarm').innerText = langData[language].label_leftarm;
+    document.getElementById( 'label_rightarm').replaceChildren();
+    document.getElementById( 'label_rightarm').innerText = langData[language].label_rightarm;
+    document.getElementById( 'label_backpack').replaceChildren();
+    document.getElementById( 'label_backpack').innerText = langData[language].label_backpack;
+    document.getElementById( 'label_pilot').replaceChildren();
+    document.getElementById( 'label_pilot').innerText = langData[language].label_pilot;
+    document.getElementById( 'label_drone').replaceChildren();
+    document.getElementById( 'label_drone').innerText = langData[language].label_drone;
+  }
+  async function changeFaction(event){
+    const language = document.getElementById('select_language').value;
+    const faction = event.currentTarget.value;
+    await changePartsData( language, faction);
+  }
+  async function openInfo(type, event) {
+    const lang = 'ja';
+    const elem = document.getElementById( type);
+    const selected = elem.options[elem.selectedIndex];
+    const qrid = selected.attributes['qrid'].value;
+    const url = `https://obsidianprotocol.net/#/info?id=${qrid}&lang=${lang}`;
+    window.open(url);
+  }
+  async function onLoadInitialize(event){
+    const language = document.getElementById( 'select_language').value;
+    const faction = document.getElementById( 'select_faction').value;
+    await changePartsData( language, faction);
+  }
+
+  document.getElementById( 'select_language').addEventListener( 'change', changeLanguage);
+  document.getElementById( 'select_faction').addEventListener( 'change', changeFaction);
+  document.getElementById( 'radio_type').addEventListener( 'change', changeType);
+
+  document.getElementById( 'select_torso').addEventListener( 'change', calcPoint);
+  document.getElementById( 'select_chasis').addEventListener( 'change', calcPoint);
+  document.getElementById( 'select_leftarm').addEventListener( 'change', calcPoint);
+  document.getElementById( 'select_rightarm').addEventListener( 'change', calcPoint);
+  document.getElementById( 'select_backpack').addEventListener( 'change', calcPoint);
+  document.getElementById( 'select_pilot').addEventListener( 'change', calcPoint);
+  document.getElementById( 'select_drone').addEventListener( 'change', calcPoint);
+
+  const buttonInfoTorso = document.getElementById( 'button_info_torso');
+  const handlerInfoTorso = openInfo.bind( buttonInfoTorso, 'select_torso');
+  buttonInfoTorso.addEventListener("click", handlerInfoTorso);
+
+  const buttonInfoChasis = document.getElementById( 'button_info_chasis');
+  const handlerInfoChasis = openInfo.bind( buttonInfoChasis, 'select_chasis');
+  buttonInfoChasis.addEventListener("click", handlerInfoChasis);
+
+  const buttonInfoLeftarm = document.getElementById( 'button_info_leftarm');
+  const handlerInfoLeftarm = openInfo.bind( buttonInfoLeftarm, 'select_leftarm');
+  buttonInfoLeftarm.addEventListener("click", handlerInfoLeftarm);
+
+  const buttonInfoRightarm = document.getElementById( 'button_info_rightarm');
+  const handlerInfoRightArm = openInfo.bind( buttonInfoRightarm, 'select_rightarm');
+  buttonInfoRightarm.addEventListener("click", handlerInfoRightArm);
+
+  const buttonInfoBackpack = document.getElementById( 'button_info_backpack');
+  const handlerInfoBackpack = openInfo.bind( buttonInfoBackpack, 'select_backpack');
+  buttonInfoBackpack.addEventListener("click", handlerInfoBackpack);
+
+  const buttonInfoPilot = document.getElementById( 'button_info_pilot');
+  const handlerInfoPilot = openInfo.bind( buttonInfoPilot, 'select_pilot');
+  buttonInfoPilot.addEventListener("click", handlerInfoPilot);
+
+  const buttonInfoDrone = document.getElementById( 'button_info_drone');
+  const handlerInfoDrone = openInfo.bind( buttonInfoDrone, 'select_drone');
+  buttonInfoDrone.addEventListener("click", handlerInfoDrone);
+
+  window.addEventListener( 'load', onLoadInitialize);
+
+</script>
+</html>
