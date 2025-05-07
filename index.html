@@ -11,7 +11,7 @@
   <nav class="level is-mobile">
     <div class="level-left">
       <div class="level-item">
-        <label class="label" id="label_faction">Faction</label>
+        <label class="label" name="label_faction">Faction</label>
         <p class="select is-danger">
           <select id="select_faction" disabled><!--Remove 'disabled' when adding other PartsData.-->
             <option value="RDL">RDL</option>
@@ -23,7 +23,7 @@
     </div>
     <div class="level-right">
       <div class="level-item">
-        <label class="label" id="label_language">Language</label>
+        <label class="label" name="label_language">Language</label>
         <p class="select is-small is-primary">
           <select id="select_language">
             <option value="en">English</option>
@@ -36,128 +36,173 @@
     </div>
   </nav>
 
-  <div class="grid">
-    <div id="select_type" class="cell">
-      <label class="label" id="label_type">Type</label>
-      <div class="field is-narrow">
-        <div class="control">
-          <form id="radio_type">
-            <label class="radio"><input type="radio" name="type" value="mech" checked />Mech</label>
-            <label class="radio"><input type="radio" name="type" value="drone" />Drone</label>
-          </form>
+  <div class="tabs is-boxed">
+    <ul>
+      <li id="tab_edit"><a id="tablink_edit">Edit</a></li>
+      <li id="tab_squad"><a id="tablink_squad">Squad</a></li>
+    </ul>
+  </div>
+
+  <div class="container" id="container_edit">
+    <div class="grid">
+      <div id="select_type" class="cell">
+        <label class="label" name="label_type">Type</label>
+        <div class="field is-narrow">
+          <div class="control">
+            <form id="radio_type">
+              <label class="radio"><input type="radio" name="type" value="mech" checked />Mech</label>
+              <label class="radio"><input type="radio" name="type" value="drone" />Drone</label>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="point_view" class="cell">
+        <div class="fixed-grid">
+          <div class="grid">
+            <p class="cell has-text-right is-size-5" id="label_point">Point</p>
+            <p class="cell is-size-3 has-text-weight-bold" id="value_point"></p>
+          </div>
         </div>
       </div>
     </div>
-    <div id="point_view" class="cell">
-      <div class="fixed-grid">
-        <div class="grid">
-          <p class="cell has-text-right is-size-5" id="label_point">Point</p>
-          <p class="cell is-size-3 has-text-weight-bold" id="value_point"></p>
+
+    <div id="type_mech">
+      <label class="label" name="label_torso">Torso</label>
+      <div class="field has-addons">
+        <p class="control">
+          <div class="select is-fullwidth">
+            <select id="select_torso">
+            </select>
+          </div>
+        </p>
+        <p class="control">
+          <button class="button" id="button_info_torso">Info</button>
+        </p>
+      </div>
+
+      <label class="label" name="label_chasis">Chasis</label>
+      <div class="field has-addons">
+        <p class="control">
+          <div class="select is-fullwidth">
+            <select id="select_chasis">
+            </select>
+          </div>
+        </p>
+        <p class="control">
+          <button class="button" id="button_info_chasis">Info</button>
+        </p>
+      </div>
+
+      <label class="label" name="label_leftarm">LeftArm</label>
+      <div class="field has-addons">
+        <p class="control">
+          <div class="select is-fullwidth">
+            <select id="select_leftarm">
+            </select>
+          </div>
+        </p>
+        <p class="control">
+          <button class="button" id="button_info_leftarm">Info</button>
+        </p>
+      </div>
+
+      <label class="label" name="label_rightarm">RightArm</label>
+      <div class="field has-addons">
+        <p class="control">
+          <div class="select is-fullwidth">
+            <select id="select_rightarm">
+            </select>
+          </div>
+        </p>
+        <p class="control">
+          <button class="button" id="button_info_rightarm">Info</button>
+        </p>
+      </div>
+
+      <label class="label" name="label_backpack">BackPack</label>
+      <div class="field has-addons">
+        <p class="control">
+          <div class="select is-fullwidth">
+            <select id="select_backpack">
+            </select>
+          </div>
+        </p>
+        <p class="control">
+          <button class="button" id="button_info_backpack">Info</button>
+        </p>
+      </div>
+
+      <label class="label" name="label_pilot">Pilot</label>
+      <div class="field has-addons">
+        <p class="control">
+          <div class="select is-fullwidth">
+            <select id="select_pilot">
+            </select>
+          </div>
+        </p>
+        <p class="control">
+          <button class="button" id="button_info_pilot">Info</button>
+        </p>
+      </div>
+    </div>
+
+    <div id="type_drone">
+      <label class="label" name="label_drone">Drone</label>
+      <div class="field has-addons">
+        <p class="control">
+          <div class="select is-fullwidth">
+            <select id="select_drone">
+            </select>
+          </div>
+        </p>
+        <p class="control">
+          <button class="button" id="button_info_drone">Info</button>
+        </p>
+      </div>
+    </div>
+
+    <div id="operate" class="mt-5">
+      <div class="grid">
+        <div class="cell">
+          <button class="button" id="button_addSquad">Add to Squad</button>
         </div>
       </div>
     </div>
   </div>
-  </div>
 
-  <div id="type_mech">
-    <label class="label" id="label_torso">Torso</label>
-    <div class="field has-addons">
-      <p class="control">
-        <div class="select is-fullwidth">
-          <select id="select_torso">
-          </select>
+  <div class="container" id="container_squad">
+    <!-- Show point sum. -->
+    <div id="squad_point">
+      <div class="cell">
+        <div class="fixed-grid">
+          <div class="grid">
+            <p class="cell has-text-right is-size-5" id="label_squad_point">PointSum</p>
+            <p class="cell is-size-3 has-text-weight-bold" id="value_squad_point"></p>
+          </div>
         </div>
-      </p>
-      <p class="control">
-        <button class="button" id="button_info_torso">Info</button>
-      </p>
+      </div>
     </div>
-
-    <label class="label" id="label_chasis">Chasis</label>
-    <div class="field has-addons">
-      <p class="control">
-        <div class="select is-fullwidth">
-          <select id="select_chasis">
-          </select>
-        </div>
-      </p>
-      <p class="control">
-        <button class="button" id="button_info_chasis">Info</button>
-      </p>
-    </div>
-
-    <label class="label" id="label_leftarm">LeftArm</label>
-    <div class="field has-addons">
-      <p class="control">
-        <div class="select is-fullwidth">
-          <select id="select_leftarm">
-          </select>
-        </div>
-      </p>
-      <p class="control">
-        <button class="button" id="button_info_leftarm">Info</button>
-      </p>
-    </div>
-
-    <label class="label" id="label_rightarm">RightArm</label>
-    <div class="field has-addons">
-      <p class="control">
-        <div class="select is-fullwidth">
-          <select id="select_rightarm">
-          </select>
-        </div>
-      </p>
-      <p class="control">
-        <button class="button" id="button_info_rightarm">Info</button>
-      </p>
-    </div>
-
-    <label class="label" id="label_backpack">BackPack</label>
-    <div class="field has-addons">
-      <p class="control">
-        <div class="select is-fullwidth">
-          <select id="select_backpack">
-          </select>
-        </div>
-      </p>
-      <p class="control">
-        <button class="button" id="button_info_backpack">Info</button>
-      </p>
-    </div>
-
-    <label class="label" id="label_pilot">Pilot</label>
-    <div class="field has-addons">
-      <p class="control">
-        <div class="select is-fullwidth">
-          <select id="select_pilot">
-          </select>
-        </div>
-      </p>
-      <p class="control">
-        <button class="button" id="button_info_pilot">Info</button>
-      </p>
-    </div>
-  </div>
-
-  <div id="type_drone">
-    <label class="label" id="label_drone">Drone</label>
-    <div class="field has-addons">
-      <p class="control">
-        <div class="select is-fullwidth">
-          <select id="select_drone">
-          </select>
-        </div>
-      </p>
-      <p class="control">
-        <button class="button" id="button_info_drone">Info</button>
-      </p>
+    <!-- Show squad member card.-->
+    <div id="squad_list">
+    
     </div>
   </div>
 </body>
 <script>
   const PART_DATA_SEPARATOR = '_';
   const PART_DATA_BASE_NAME = 'PartsData';
+  const labelDictFilename = 'LabelDict.json'
+  let labelDict;
   let partData;
+  const squadMenbers = [];
+  // { 
+  //   point:number, 
+  //   isMech:boolean,
+  //   component:{
+  //     torso: { qrid:number, name:string, point:number},
+  //     chasis: { qrid:number, name:string, point:number},...
+  //   }
+  // }[]
   async function calcPoint() {
     const elemSelect = document.getElementById( 'select_torso');
     const elemChasis = document.getElementById( 'select_chasis');
@@ -182,7 +227,6 @@
     else{
       point = Number( elemDrone.options[elemDrone.selectedIndex].value);
     }
-    console.log( point);
     elemPoint.replaceChildren();
     elemPoint.innerText = point;
   }
@@ -216,7 +260,6 @@
   }
   async function changePartsData( language, faction) {
     const filename = PART_DATA_BASE_NAME + PART_DATA_SEPARATOR + faction + PART_DATA_SEPARATOR + language + '.json'
-    console.log( filename);
     try{
       const response = await fetch(filename);
       if (!response.ok) {
@@ -244,42 +287,28 @@
     const faction = document.getElementById('select_faction').value;
     await changePartsData( language, faction);
 
-    const filename = 'LabelDict.json'
-    let langData;
-    try{
-      const response = await fetch(filename);
-      if (!response.ok) {
-        throw new Error('Cannot find Label Dictionary file.(Oops!)');
-      }
-      langData = await response.json();
-    }
-    catch( error) {
-      console.error( 'error: ', error.message);
-      window.alert( error.message);
-      throw error;
-    }
-    document.getElementById( 'label_faction').replaceChildren();
-    document.getElementById( 'label_faction').innerText = langData[language].label_faction;
-    document.getElementById( 'label_language').replaceChildren();
-    document.getElementById( 'label_language').innerText = langData[language].label_language;
-    document.getElementById( 'label_type').replaceChildren();
-    document.getElementById( 'label_type').innerText = langData[language].label_type;
-    document.getElementById( 'label_point').replaceChildren();
-    document.getElementById( 'label_point').innerText = langData[language].label_point;
-    document.getElementById( 'label_torso').replaceChildren();
-    document.getElementById( 'label_torso').innerText = langData[language].label_torso;
-    document.getElementById( 'label_chasis').replaceChildren();
-    document.getElementById( 'label_chasis').innerText = langData[language].label_chasis;
-    document.getElementById( 'label_leftarm').replaceChildren();
-    document.getElementById( 'label_leftarm').innerText = langData[language].label_leftarm;
-    document.getElementById( 'label_rightarm').replaceChildren();
-    document.getElementById( 'label_rightarm').innerText = langData[language].label_rightarm;
-    document.getElementById( 'label_backpack').replaceChildren();
-    document.getElementById( 'label_backpack').innerText = langData[language].label_backpack;
-    document.getElementById( 'label_pilot').replaceChildren();
-    document.getElementById( 'label_pilot').innerText = langData[language].label_pilot;
-    document.getElementById( 'label_drone').replaceChildren();
-    document.getElementById( 'label_drone').innerText = langData[language].label_drone;
+    document.getElementsByName( 'label_faction').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_faction').forEach( element => element.innerText = labelDict[language].label_faction);
+    document.getElementsByName( 'label_language').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_language').forEach( element => element.innerText = labelDict[language].label_language);
+    document.getElementsByName( 'label_type').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_type').forEach( element => element.innerText = labelDict[language].label_type);
+    document.getElementsByName( 'label_point').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_point').forEach( element => element.innerText = labelDict[language].label_point);
+    document.getElementsByName( 'label_torso').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_torso').forEach( element => element.innerText = labelDict[language].label_torso);
+    document.getElementsByName( 'label_chasis').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_chasis').forEach( element => element.innerText = labelDict[language].label_chasis);
+    document.getElementsByName( 'label_leftarm').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_leftarm').forEach( element => element.innerText = labelDict[language].label_leftarm);
+    document.getElementsByName( 'label_rightarm').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_rightarm').forEach( element => element.innerText = labelDict[language].label_rightarm);
+    document.getElementsByName( 'label_backpack').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_backpack').forEach( element => element.innerText = labelDict[language].label_backpack);
+    document.getElementsByName( 'label_pilot').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_pilot').forEach( element => element.innerText = labelDict[language].label_pilot);
+    document.getElementsByName( 'label_drone').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_drone').forEach( element => element.innerText = labelDict[language].label_drone);
   }
   async function changeFaction(event){
     const language = document.getElementById('select_language').value;
@@ -294,10 +323,230 @@
     const url = `https://obsidianprotocol.net/#/info?id=${qrid}&lang=${lang}`;
     window.open(url);
   }
+
+  async function showEditContainer() {
+    document.getElementById( 'tab_squad').classList.remove( 'is-active');
+    document.getElementById( 'tab_edit').classList.add( 'is-active');
+
+    document.getElementById( 'container_edit').classList.remove( 'is-hidden');
+    document.getElementById( 'container_squad').classList.add( 'is-hidden');
+  }
+  async function cardOpenClose(id, event) {
+    const elemContainer = document.querySelector( '#container_squad');
+    const elemList = elemContainer.querySelector( '#squad_list');
+    const elemCard = elemList.querySelector( '#member' + id);
+    const elemButtonUpDown = elemCard.querySelector( '#button-updown');
+    const isUp = elemButtonUpDown.classList.contains( 'fa-angle-up');
+    if( isUp) {
+      elemButtonUpDown.classList.remove( 'fa-angle-up');
+      elemButtonUpDown.classList.add( 'fa-angle-down');
+      elemCard.querySelector( '#card-content').classList.remove( 'is-hidden');
+      //elemCard.getElementById( 'footer').classList.remove( 'is-hidden');
+    }
+    else {
+      elemButtonUpDown.classList.add( 'fa-angle-up');
+      elemButtonUpDown.classList.remove( 'fa-angle-down');
+      elemCard.querySelector( '#card-content').classList.add( 'is-hidden');
+      //elemCard.getElementById( 'footer').classList.add( 'is-hidden');
+    }
+  }
+  async function createCardContentComponent(labelId, contentText) {
+    const lang = document.getElementById('select_language').value;
+    const root = document.createElement( 'div');
+
+    const label = document.createElement( 'label');
+    label.classList.add( 'label');
+    label.classList.add( 'has-text-left');
+    label.setAttribute("name", labelId);
+    label.innerText = labelDict[lang][labelId];
+
+    const labelDiv = document.createElement( 'div');
+    labelDiv.classList.add( 'field-label');
+    labelDiv.classList.add( 'm-0');
+    labelDiv.classList.add( 'p-0');
+    labelDiv.appendChild( label);
+
+    const field = document.createElement( 'div');
+    field.classList.add( 'field');
+    field.classList.add( 'has-addons');
+
+    const control = document.createElement( 'control');
+    control.classList.add( 'control');
+    control.classList.add( 'is-expanded');
+
+    const input = document.createElement( 'input');
+    input.classList.add( 'input');
+    input.inputMode = 'text';
+    input.value = contentText;
+    input.readOnly = true;
+
+    control.appendChild( input);
+    field.appendChild( control);
+    root.appendChild( labelDiv);
+    root.appendChild( field);
+
+    return root;
+  }
+  async function createCard(id, member) {
+    const cardRoot = document.createElement( 'div');
+    cardRoot.classList.add( 'card');
+    cardRoot.setAttribute( 'name', 'member-card');
+    cardRoot.id = 'member' + id;
+    const cardHeader = document.createElement( 'header');
+    cardHeader.classList.add( 'card-header');
+    cardHeader.id = 'card-header';
+    const cardContent = document.createElement( 'div');
+    cardContent.classList.add( 'card-content');
+    cardContent.classList.add( 'm-1');
+    cardContent.classList.add( 'p-1');
+    cardContent.id = 'card-content';
+    const cardFooter = document.createElement( 'footer');
+    cardFooter.classList.add( 'card-footer');
+    cardFooter.id = 'card-footer';
+
+    const headerTitle = document.createElement( 'p');
+    headerTitle.classList.add( 'card-header-title');
+    headerTitle.id = 'card-title';
+    headerTitle.innerText = 'Member-' + id + '[point: ' + member.point + ']';
+    const headerButton = document.createElement( 'button');
+    headerButton.classList.add( 'card-header-icon');
+    headerButton.id = 'button-updown';
+    const buttonSpan = document.createElement( 'span');
+    buttonSpan.classList.add( 'icon');
+    const spanText = document.createElement( 'i');
+    spanText.classList.add( 'fas');
+    spanText.classList.add( 'fa-angle-down');
+
+    const handlerOpenClose = cardOpenClose.bind( headerButton, id);
+    headerButton.addEventListener( 'click', handlerOpenClose);
+
+    const content = document.createElement( 'div');
+    content.classList.add( 'content');
+    content.id = 'content';
+
+    buttonSpan.appendChild( spanText);
+    headerButton.appendChild( buttonSpan);
+    cardHeader.appendChild( headerTitle);
+    cardHeader.appendChild( headerButton);
+
+    if( member.isMech) {
+      const torsoContent = await createCardContentComponent( 'label_torso', member.component.torso.name);
+      content.appendChild( torsoContent);
+      const chasisContent = await createCardContentComponent( 'label_chasis', member.component.chasis.name);
+      content.appendChild( chasisContent);
+      const leftarmContent = await createCardContentComponent( 'label_leftarm', member.component.leftarm.name);
+      content.appendChild( leftarmContent);
+      const rightarmContent = await createCardContentComponent( 'label_rightarm', member.component.rightarm.name);
+      content.appendChild( rightarmContent);
+      const backpackContent = await createCardContentComponent( 'label_backpack', member.component.backpack.name);
+      content.appendChild( backpackContent);
+      const pilotContent = await createCardContentComponent( 'label_pilot', member.component.pilot.name);
+      content.appendChild( pilotContent);
+    }
+    else {
+      const pilotContent = await createCardContentComponent( 'label_drone', member.component.drone.name);
+      content.appendChild( pilotContent);
+
+    }
+    cardContent.appendChild( content);
+
+    //TODO: Setup footer content;
+
+    cardRoot.appendChild( cardHeader);
+    cardRoot.appendChild( cardContent);
+    cardRoot.appendChild( cardFooter);
+
+    return cardRoot;
+
+  }
+  async function paintSquadContainer() {
+    const pointSum = squadMenbers.reduce((acc, member) => acc + member.point, 0);
+    const elemPoint = document.getElementById( 'value_squad_point');
+    elemPoint.replaceChildren();
+    elemPoint.innerText = pointSum;
+
+    const elemList = document.getElementById( 'squad_list');
+    elemList.replaceChildren();
+    for( let index = 0; index < squadMenbers.length; index++) {
+      const card = await createCard( index + 1, squadMenbers[index]);
+      elemList.appendChild( card);
+    }
+  }
+  async function showSquadContainer() {
+    document.getElementById( 'tab_edit').classList.remove( 'is-active');
+    document.getElementById( 'tab_squad').classList.add( 'is-active');
+
+    document.getElementById( 'container_edit').classList.add( 'is-hidden');
+    document.getElementById( 'container_squad').classList.remove( 'is-hidden');
+
+    paintSquadContainer();
+  }
+  async function addToSquad() {
+    const separator = '(point: ';
+    const idList = [ 'select_torso', 'select_chasis', 'select_leftarm', 'select_rightarm', 'select_backpack', 'select_pilot', 'select_drone']
+    const typeNodeList = document.getElementById('radio_type')['type'];
+    const typeValue = typeNodeList.value;
+    const components = new Map();
+    idList.forEach( id => {
+      const elem = document.getElementById( id);
+      const selected = elem.options[elem.selectedIndex];
+      const text = selected.innerText;
+      const name = text.substring( 0, text.indexOf( separator) - 1);
+      const point = text.substring( text.indexOf( separator) + separator.length, text.indexOf(')'));
+      const qrid = selected.attributes['qrid'].value;
+      console.log( name + '/ ' + point + '/ ' + qrid);
+      components.set( id, { qrid: Number( qrid), name: name, point: Number( point)});
+    });
+    if( typeValue === 'mech') {
+      const pointSum = components.get( 'select_torso').point +
+        components.get( 'select_chasis').point +
+        components.get( 'select_leftarm').point +
+        components.get( 'select_rightarm').point +
+        components.get( 'select_backpack').point +
+        components.get( 'select_pilot').point;
+      const member = {
+        point: pointSum,
+        isMech: true,
+        component: {
+          torso: components.get( 'select_torso'),
+          chasis: components.get( 'select_chasis'),
+          leftarm: components.get( 'select_leftarm'),
+          rightarm: components.get( 'select_rightarm'),
+          backpack: components.get( 'select_backpack'),
+          pilot: components.get( 'select_pilot')
+        }
+      }
+      squadMenbers.push( member);
+    }
+    else{
+      const member = {
+        point: components.get( 'select_drone').point,
+        isMech: false,
+        component: {
+          drone: components.get( 'select_drone')
+        }
+      }
+      squadMenbers.push( member);
+    }
+    showSquadContainer();
+  }
   async function onLoadInitialize(event){
     const language = document.getElementById( 'select_language').value;
     const faction = document.getElementById( 'select_faction').value;
+    try{
+      const response = await fetch( labelDictFilename);
+      if (!response.ok) {
+        throw new Error('Cannot find Label Dictionary file.(Oops!)');
+      }
+      labelDict = await response.json();
+    }
+    catch( error) {
+      console.error( 'error: ', error.message);
+      window.alert( error.message);
+      throw error;
+    }
     await changePartsData( language, faction);
+    await showEditContainer();
   }
 
   document.getElementById( 'select_language').addEventListener( 'change', changeLanguage);
@@ -339,6 +588,10 @@
   const buttonInfoDrone = document.getElementById( 'button_info_drone');
   const handlerInfoDrone = openInfo.bind( buttonInfoDrone, 'select_drone');
   buttonInfoDrone.addEventListener("click", handlerInfoDrone);
+
+  document.getElementById( 'tablink_edit').addEventListener( 'click', showEditContainer);
+  document.getElementById( 'tablink_squad').addEventListener( 'click', showSquadContainer);
+  document.getElementById( 'button_addSquad').addEventListener( 'click', addToSquad);
 
   window.addEventListener( 'load', onLoadInitialize);
 

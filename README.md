@@ -31,3 +31,10 @@ Language:[en|ja|zh-CN|zh-TW]
 # Parts Data
 - Part Data RDL, UN
   https://discord.com/channels/972775718264135740/972779618375438336/1313034452846383155
+
+# TODO
+- Squad Member edit.
+- Squad Member remove.
+- Squad reset.
+- When add memer, open current added.
+- 'Tab Label' multi language.
