@@ -287,7 +287,7 @@
     await changePartsData( language, faction);
   }
   async function openInfo(type, event) {
-    const lang = 'ja';
+    const lang = document.getElementById('select_language').value;
     const elem = document.getElementById( type);
     const selected = elem.options[elem.selectedIndex];
     const qrid = selected.attributes['qrid'].value;
