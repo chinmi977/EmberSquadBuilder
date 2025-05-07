@@ -2,349 +2,362 @@
     "Torso":[
         {
             "id":12,
-            "name":"RT-06 \"Mire\" Battle Core",
-            "point":21
+            "name":"RT-06 \"泥沼\" 主战核心",
+            "point":15
         },
         {
             "id":14,
-            "name":"RT-07T \"Dune\" Tactical Core",
+            "name":"RT-07T \"沙丘\" 战术核心",
             "point":67
         },
         {
             "id":15,
-            "name":"RT-08 \"Tempest\" Artillery Core",
+            "name":"RT-08 \"雷暴\" 炮战核心",
             "point":62
         },
         {
             "id":16,
-            "name":"RT-09A \"Volcano\" Armored Core",
+            "name":"RT-09A \"火山\" 重甲核心",
             "point":66
         },
         {
             "id":17,
-            "name":"RT-15B \"Lava\" Assault Core",
+            "name":"RT-15B \"熔岩\" 突击核心",
             "point":59
         },
         {
             "id":18,
-            "name":"RT-15/EC \"Aurora\" ECM Core",
+            "name":"RT-15/EC \"极光\" 电战核心",
             "point":60
         },
         {
             "id":19,
-            "name":"RT-15C \"Glacier\" Assault Core",
+            "name":"RT-15C \"冰川\" 突击核心",
             "point":56
         }
     ],
     "Chasis":[
         {
             "id":20,
-            "name":"RL-06 Standard Chassis",
-            "point":24
+            "name":"RL-06 标准下肢",
+            "point":21
         },
         {
             "id":21,
-            "name":"RL-08 Armored Chassis",
+            "name":"RL-08 重甲下肢",
             "point":36
         },
         {
             "id":22,
-            "name":"RL-03D \"Swift Steed\" High-mobility Chassis",
+            "name":"RL-03D \"快马\" 高速下肢",
             "point":48
+        },
+        {
+            "id":249,
+            "name":"RL-08M 重甲下肢",
+            "point":36
+        },{
+            "id":506,
+            "name":"RL-06M 标准下肢",
+            "point":24
+        },{
+            "id":507,
+            "name":"RL-06MS 辅助下肢",
+            "point":30
         }
     ],
     "LeftArm":[
         {
             "id":23,
-            "name":"Type-55 Shield + CC-6 Cleaver",
+            "name":"Type-55 轻盾 + CC-6 格斗刀",
             "point":54
         },
         {
             "id":29,
-            "name":"ML-32 Dual Launcher + CC-3 Dagger",
+            "name":"ML-32 双联发射器 + CC-3 格斗刀",
             "point":33
         },
         {
             "id":32,
-            "name":"R-20 Shoulder-Mounted Railgun (L)",
+            "name":"R-20 肩置磁轨炮（左）",
             "point":51
         },
         {
             "id":34,
-            "name":"Type 77 Bulwark",
+            "name":"77型重型盾牌",
             "point":60
         },
         {
             "id":37,
-            "name":"CC-4 Cleaver (L)",
+            "name":"CC-4 战斗刀 （左）",
             "point":39
         },
         {
             "id":40,
-            "name":"SPHX-3 Supporting Arm",
+            "name":"SPHX-3 重武器支持手",
             "point":42
         },
         {
             "id":41,
-            "name":"L-320 SMMG + Type 55 Shield + CC-6 Cleaver",
+            "name":"L-320 肩部机枪 + CC-6 格斗刀",
             "point":51
         },
         {
             "id":45,
-            "name":"Type 79 Combat Shield",
+            "name":"79型战斗盾牌",
             "point":66
         },
         {
             "id":50,
-            "name":"FCC-12 \"Big Hand\" Grappler",
+            "name":"FCC-12 \"大手\" 格斗系统",
             "point":69
         },
         {
             "id":53,
-            "name":"Type 55 Shield + PC-9 Shotgun (L)",
+            "name":"55型轻盾 + PC-9 霰弹枪 （左）",
             "point":48
         },
         {
             "id":56,
-            "name":"G/AC-6 Rocket Launcher",
+            "name":"G/AC-6 火箭筒",
             "point":36
         },
         {
             "id":62,
-            "name":"Type 62 Buckler + CC-20 Sabre (L)",
+            "name":"62型臂盾 + CC-20 单手剑 （左）",
             "point":63
         },
         {
             "id":64,
-            "name":"Type 55 Shield + MES Beacon Launcher",
+            "name":"55型轻盾 + MES 信标发射器",
             "point":45
         }
     ],
     "RightArm":[
         {
             "id":25,
-            "name":"AC-32 Automatic Rifle",
+            "name":"AC-32 自动步枪",
             "point":24
         },
         {
             "id":27,
-            "name":"AC-32M Marksman Rifle",
+            "name":"AC-32M 射手步枪",
             "point":33
         },
         {
             "id":30,
-            "name":"AC-150 HMG",
+            "name":"AC-150 重型机枪",
             "point":42
         },
         {
             "id":33,
-            "name":"R-20 Shoulder-Mounted Railgun (R)",
+            "name":"R-20 肩置磁轨炮 （右）",
             "point":51
         },
         {
             "id":36,
-            "name":"CC-4 Cleaver (R)",
+            "name":"CC-4 战斗刀 （右）",
             "point":39
         },
         {
             "id":38,
-            "name":"ACX-350 \"Stratus\" Prototype HMG",
+            "name":"ACX-350 \"积雨云\" 原型重机枪",
             "point":48
         },
         {
             "id":43,
-            "name":"R-35 Heavy Railgun",
+            "name":"R-35 重型磁轨炮",
             "point":54
         },
         {
             "id":46,
-            "name":"Type 55 Shield + PC-9 Shotgun (R)",
+            "name":"55型轻盾 + PC-9 霰弹枪 （右）",
             "point":48
         },
         {
             "id":48,
-            "name":"Type 55 Shield + PC-9 Shotgun + Smoke Grenade (R)",
+            "name":"55型轻盾 + PC-9 霰弹枪 + 烟幕弹 （右）",
             "point":57
         },
         {
             "id":51,
-            "name":"L-320 SMMG + CC-90 Glaive",
+            "name":"L-320 肩部机枪 + CC-90 重格斗刀",
             "point":63
         },
         {
             "id":55,
-            "name":"CC-100 \"Hercules\" Meteor Hammer",
+            "name":"CC-100 \"力士\" 链锤",
             "point":48
         },
         {
             "id":58,
-            "name":"AC-39 Tactical Rifle",
+            "name":"AC-39 战术步枪",
             "point":45
         },
         {
             "id":63,
-            "name":"Type 63 Arm Cannon + CC-20 Sabre (R)",
+            "name":"63型臂炮 + CC-20 单手剑 （右）",
             "point":66
         },
         {
             "id":68,
-            "name":"AC-161 SMG",
+            "name":"AC-161 冲锋枪",
             "point":45
         }
     ],
     "BackPack":[
         {
             "id":1,
-            "name":"SH-15 Field Repair System",
-            "point":33
+            "name":"SH-15 战场修复系统",
+            "point":30
         },
         {
             "id":2,
-            "name":"ECS-2 External Cooler",
+            "name":"ECS-2 外置冷却器",
             "point":33
         },
         {
             "id":3,
-            "name":"AMS-190 Active Defense System",
+            "name":"AMS-190 主动防御系统",
             "point":27
         },
         {
             "id":4,
-            "name":"ML-34 Quad Missile Rack",
+            "name":"ML-34 四联导弹包",
             "point":39
         },
         {
             "id":5,
-            "name":"LGP-80 Artillery",
+            "name":"LGP-80 长程火炮",
             "point":33
         },
         {
             "id":6,
-            "name":"GLP-15 Mine Layer",
+            "name":"GLP-15 布雷包",
             "point":30
         },
         {
             "id":7,
-            "name":"MUD-1 \"Muck\" ECM Backpack",
+            "name":"MUD-1 \"泥浆\" 电子战背包",
             "point":33
         },
         {
             "id":8,
-            "name":"CP-3 Beacon Backpack",
+            "name":"CP-3 信标携带包",
             "point":36
         },
         {
             "id":9,
-            "name":"MUE/N-20 \"Echoes\" Support Backpack",
+            "name":"MUE/N-20 \"回响\" 支援背包",
             "point":30
         },
         {
             "id":10,
-            "name":"TB-600 Jetpack",
+            "name":"TB-600 跳跃背包",
             "point":48
         },
         {
             "id":11,
-            "name":"ML-92 Dual Missile Rack",
+            "name":"ML-92 双联导弹包",
             "point":20
         }
     ],
     "Pilot":[
         {
             "id":301,
-            "name":"Misty",
+            "name":"薄雾",
             "point":15
         },
         {
             "id":302,
-            "name":"Spike",
+            "name":"长钉",
             "point":15
         },
         {
             "id":303,
-            "name":"Wu",
+            "name":"无霜",
             "point":12
         },
         {
             "id":304,
-            "name":"Hammerhead",
+            "name":"锤头鲨",
             "point":10
         },
         {
             "id":305,
-            "name":"Anser",
+            "name":"灰雁",
             "point":15
         },
         {
             "id":306,
-            "name":"KeyHole",
+            "name":"锁眼",
             "point":12
         },
         {
             "id":309,
-            "name":"Shock Troop-09",
+            "name":"突击兵-09",
             "point":6
         },
         {
             "id":310,
-            "name":"Shock Troop-10",
+            "name":"突击兵-10",
             "point":6
         },
         {
             "id":311,
-            "name":"Shock Troop-11",
+            "name":"突击兵-11",
             "point":6
         },
         {
             "id":312,
-            "name":"Shock Troop-12",
+            "name":"突击兵-12",
             "point":6
         },
         {
             "id":313,
-            "name":"Shock Troop-13",
+            "name":"突击兵-13",
             "point":6
         },
         {
             "id":314,
-            "name":"Scout-14",
+            "name":"侦察兵-14",
             "point":9
         },
         {
             "id":315,
-            "name":"Scout-15",
+            "name":"侦察兵-15",
             "point":9
         },
         {
             "id":316,
-            "name":"Scout-16",
+            "name":"侦察兵-16",
             "point":9
         },
         {
             "id":317,
-            "name":"Scout-17",
+            "name":"侦察兵-17",
             "point":9
         },
         {
             "id":318,
-            "name":"Scout-18",
+            "name":"侦察兵-18",
             "point":9
         }
     ],
     "Drone":[
         {
             "id":78,
-            "name":"DTG-30M \"Hyena\" MG Type",
+            "name":"DTG-30M \"鬣狗\" 机枪型",
             "point":42
         },
         {
             "id":79,
-            "name":"DTG-30S \"Hyena\" Missile Type",
+            "name":"DTG-30S \"鬣狗\" 导弹型",
             "point":33
         },
         {
             "id":80,
-            "name":"DTG-30R \"Hyena\" Radar Type",
+            "name":"DTG-30R \"鬣狗\" 雷达型",
             "point":27
         }
     ]
