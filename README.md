@@ -14,7 +14,6 @@
 │    RDL Parts data information file for Japanese.
 ├─ PartsData_RDL_zh-CN.json
 │    RDL Parts data information file for Simplified Chinese.
-│    This file is temporary. The content is the same as the English file.
 ├─ PartsData_RDL_zh-TW.json
 │    RDL Parts data information file for Traditional Chinese.
 │    This file is temporary. The content is the same as the English file.
@@ -27,7 +26,7 @@ PartsData_${Faction}_${Language}.json
 
 Faction:[RDL|UN|GoF]  
 Language:[en|ja|zh-CN|zh-TW]  
-`zh-CN`, `zh-TW` is temporary.
+`zh-TW` is temporary.
 
 # Parts Data
 - Part Data RDL, UN
