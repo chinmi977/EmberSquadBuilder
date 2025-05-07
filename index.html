@@ -59,7 +59,7 @@
       <div id="point_view" class="cell">
         <div class="fixed-grid">
           <div class="grid">
-            <p class="cell has-text-right is-size-5" id="label_point">Point</p>
+            <p class="cell has-text-right is-size-5" name="label_point">Point</p>
             <p class="cell is-size-3 has-text-weight-bold" id="value_point"></p>
           </div>
         </div>
@@ -176,7 +176,7 @@
       <div class="cell">
         <div class="fixed-grid">
           <div class="grid">
-            <p class="cell has-text-right is-size-5" id="label_squad_point">PointSum</p>
+            <p class="cell has-text-right is-size-5" name="label_squad_point">PointSum</p>
             <p class="cell is-size-3 has-text-weight-bold" id="value_squad_point"></p>
           </div>
         </div>
@@ -309,6 +309,8 @@
     document.getElementsByName( 'label_pilot').forEach( element => element.innerText = labelDict[language].label_pilot);
     document.getElementsByName( 'label_drone').forEach( element => element.replaceChildren());
     document.getElementsByName( 'label_drone').forEach( element => element.innerText = labelDict[language].label_drone);
+    document.getElementsByName( 'label_squad_point').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'label_squad_point').forEach( element => element.innerText = labelDict[language].label_squad_point);
   }
   async function changeFaction(event){
     const language = document.getElementById('select_language').value;

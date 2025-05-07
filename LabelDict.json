@@ -10,7 +10,8 @@
         "label_rightarm":"Right Arm",
         "label_backpack":"Backpack",
         "label_pilot":"Pilot",
-        "label_drone":"Drone"
+        "label_drone":"Drone",
+        "label_squad_point":"PointSum"
     },
     "ja":{
         "label_faction":"勢力",
@@ -23,7 +24,8 @@
         "label_rightarm":"右腕",
         "label_backpack":"バックパック",
         "label_pilot":"パイロット",
-        "label_drone":"ドローン"
+        "label_drone":"ドローン",
+        "label_squad_point":"ポイント合計"
     },
     "zh-CN":{
         "label_faction":"Faction",
@@ -36,7 +38,8 @@
         "label_rightarm":"Right Arm",
         "label_backpack":"Backpack",
         "label_pilot":"Pilot",
-        "label_drone":"Drone"
+        "label_drone":"Drone",
+        "label_squad_point":"PointSum"
     },
     "zh-TW":{
         "label_faction":"Faction",
@@ -49,6 +52,7 @@
         "label_rightarm":"Right Arm",
         "label_backpack":"Backpack",
         "label_pilot":"Pilot",
-        "label_drone":"Drone"
+        "label_drone":"Drone",
+        "label_squad_point":"PointSum"
     }
 }
