@@ -49,3 +49,4 @@ Language:[en|ja|zh-CN|zh-TW]
 - Squad reset.
 - When add memer, open current added.
 - 'Tab Label' multi language.
+- When change Language in "Squad" view, change parts glossary.
