@@ -3,7 +3,7 @@ Ember:Obsidian-Protocol Squad editor.
 
 ## Concept
 no application server.  
-work on smartphone Web blowser.  
+work on smartphone Web browser.  
 
 ## Environment
 - CSS Framework  
