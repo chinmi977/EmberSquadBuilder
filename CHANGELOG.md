@@ -10,4 +10,6 @@
 
 - 2025 / 5 / 7 later  
   - add "Squad" view.(temporary)
- 
+
+- 2025 / 5 / 8  
+  - add "Delete" function at "Squad" member.

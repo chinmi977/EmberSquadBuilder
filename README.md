@@ -1,6 +1,18 @@
 # EmberSquadBuilder
+Ember:Obsidian-Protocol Squad editor.
 
-# Files
+## Concept
+no application server.  
+work on smartphone Web blowser.  
+
+## Environment
+- CSS Framework  
+  [BULMA](https://bulma.io/)
+- Server  
+  any Web Servers.  
+  currentry, work on github-pages.  
+
+## Files
 ```
 ┬─ index.html
 │    Main content.
@@ -21,20 +33,19 @@
      This file.
 ```
 
-# Parts Data File Naming Rule
+## Parts Data File Naming Rule
 PartsData_${Faction}_${Language}.json
 
 Faction:[RDL|UN|GoF]  
 Language:[en|ja|zh-CN|zh-TW]  
 `zh-TW` is temporary.
 
-# Parts Data
+## Parts Data
 - Part Data RDL, UN
   https://discord.com/channels/972775718264135740/972779618375438336/1313034452846383155
 
-# TODO
+## TODO
 - Squad Member edit.
-- Squad Member remove.
 - Squad reset.
 - When add memer, open current added.
 - 'Tab Label' multi language.
