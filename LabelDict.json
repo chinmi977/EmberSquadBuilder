@@ -11,7 +11,8 @@
         "label_backpack":"Backpack",
         "label_pilot":"Pilot",
         "label_drone":"Drone",
-        "label_squad_point":"PointSum"
+        "label_squad_point":"PointSum",
+        "button_addSquad":"Add to Squad"
     },
     "ja":{
         "label_faction":"勢力",
@@ -25,7 +26,8 @@
         "label_backpack":"バックパック",
         "label_pilot":"パイロット",
         "label_drone":"ドローン",
-        "label_squad_point":"ポイント合計"
+        "label_squad_point":"ポイント合計",
+        "button_addSquad":"部隊に追加"
     },
     "zh-CN":{
         "label_faction":"Faction",
@@ -39,7 +41,8 @@
         "label_backpack":"Backpack",
         "label_pilot":"Pilot",
         "label_drone":"Drone",
-        "label_squad_point":"PointSum"
+        "label_squad_point":"PointSum",
+        "button_addSquad":"Add to Squad"
     },
     "zh-TW":{
         "label_faction":"Faction",
@@ -53,6 +56,7 @@
         "label_backpack":"Backpack",
         "label_pilot":"Pilot",
         "label_drone":"Drone",
-        "label_squad_point":"PointSum"
+        "label_squad_point":"PointSum",
+        "button_addSquad":"Add to Squad"
     }
 }

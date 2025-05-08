@@ -164,7 +164,7 @@
     <div id="operate" class="mt-4">
       <div class="grid">
         <div class="cell">
-          <button class="button" id="button_addSquad">Add to Squad</button>
+          <button class="button" id="button_addSquad" name="button_addSquad">Add to Squad</button>
         </div>
       </div>
     </div>
@@ -311,6 +311,8 @@
     document.getElementsByName( 'label_drone').forEach( element => element.innerText = labelDict[language].label_drone);
     document.getElementsByName( 'label_squad_point').forEach( element => element.replaceChildren());
     document.getElementsByName( 'label_squad_point').forEach( element => element.innerText = labelDict[language].label_squad_point);
+    document.getElementsByName( 'button_addSquad').forEach( element => element.replaceChildren());
+    document.getElementsByName( 'button_addSquad').forEach( element => element.innerText = labelDict[language].button_addSquad);
   }
   async function changeFaction(event){
     const language = document.getElementById('select_language').value;
