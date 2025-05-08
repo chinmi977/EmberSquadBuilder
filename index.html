@@ -313,6 +313,24 @@
     document.getElementById( 'container_edit').classList.remove( 'is-hidden');
     document.getElementById( 'container_squad').classList.add( 'is-hidden');
   }
+  async function cardSquadEdit(id, event) {
+    console.log( 'edit: ' + id);
+  }
+  async function cardSquadDelete(id, event) {
+    const index = Number.parseInt( id) - 1;
+    if( index < 0) {
+      console.log( 'cardSquadDelete / invalid reuqest. delete: ' + id + ' /length: ' + squadMenbers.length);
+      window.alert( 'internal error!');
+      return;
+    }
+    if( squadMenbers.length < index + 1) {
+      console.log( 'cardSquadDelete / abnormal status. delete: ' + id + ' /length: ' + squadMenbers.length);
+      window.alert( 'internal error!');
+      return;
+    }
+    squadMenbers.splice( index, 1);
+    paintSquadContainer();
+  }
   async function cardOpenClose(id, event) {
     const elemContainer = document.querySelector( '#container_squad');
     const elemList = elemContainer.querySelector( '#squad_list');
@@ -433,15 +451,20 @@
     cardContent.appendChild( content);
 
     const footerLinkEdit = document.createElement( 'a');
-    const footerLinkDelete = document.createElement( 'a');
     footerLinkEdit.classList.add( 'card-footer-item');
-    footerLinkDelete.classList.add( 'card-footer-item');
     footerLinkEdit.innerText = labelDict[lang].label_edit;
-    footerLinkDelete.innerText = labelDict[lang].label_delete;
-    footerLinkEdit.setAttribute("name", 'label_edit');
-    footerLinkDelete.setAttribute("name", 'label_delete');
-
+    footerLinkEdit.setAttribute( 'name', 'label_edit');
+    // const handlerEdit = cardSquadEdit.bind( footerLinkEdit, id);
+    // footerLinkEdit.addEventListener( 'click', handlerEdit);
     cardFooter.appendChild( footerLinkEdit);
+
+    const footerLinkDelete = document.createElement( 'a');
+    footerLinkDelete.classList.add( 'card-footer-item');
+    footerLinkDelete.innerText = labelDict[lang].label_delete;
+    footerLinkDelete.setAttribute( 'name', 'label_delete');
+    const handlerDelete = cardSquadDelete.bind( footerLinkDelete, id);
+    footerLinkDelete.addEventListener( 'click', handlerDelete);
+
     cardFooter.appendChild( footerLinkDelete);
 
     cardRoot.appendChild( cardHeader);

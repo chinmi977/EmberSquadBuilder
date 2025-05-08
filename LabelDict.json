@@ -30,7 +30,7 @@
         "label_drone":"Drone",
         "label_squad_point":"PointSum",
         "button_addSquad":"Add to Squad",
-        "label_edit":"Edit",
+        "label_edit":"Edit(🚧)",
         "label_delete":"Delete"
     },
     "ja":{
@@ -47,7 +47,7 @@
         "label_drone":"ドローン",
         "label_squad_point":"ポイント合計",
         "button_addSquad":"部隊に追加",
-        "label_edit":"編集",
+        "label_edit":"編集(🚧)",
         "label_delete":"削除"
     },
     "zh-CN":{
@@ -64,7 +64,7 @@
         "label_drone":"Drone",
         "label_squad_point":"PointSum",
         "button_addSquad":"Add to Squad",
-        "label_edit":"Edit",
+        "label_edit":"Edit(🚧)",
         "label_delete":"Delete"
     },
     "zh-TW":{
@@ -81,7 +81,7 @@
         "label_drone":"Drone",
         "label_squad_point":"PointSum",
         "button_addSquad":"Add to Squad",
-        "label_edit":"Edit",
+        "label_edit":"Edit(🚧)",
         "label_delete":"Delete"
     }
 }
