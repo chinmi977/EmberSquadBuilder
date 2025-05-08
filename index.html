@@ -323,17 +323,16 @@
       elemButtonUpDown.classList.remove( 'fa-angle-up');
       elemButtonUpDown.classList.add( 'fa-angle-down');
       elemCard.querySelector( '#card-content').classList.remove( 'is-hidden');
-      //elemCard.getElementById( 'footer').classList.remove( 'is-hidden');
+      elemCard.querySelector( '#card-footer').classList.remove( 'is-hidden');
     }
     else {
       elemButtonUpDown.classList.add( 'fa-angle-up');
       elemButtonUpDown.classList.remove( 'fa-angle-down');
       elemCard.querySelector( '#card-content').classList.add( 'is-hidden');
-      //elemCard.getElementById( 'footer').classList.add( 'is-hidden');
+      elemCard.querySelector( '#card-footer').classList.add( 'is-hidden');
     }
   }
-  async function createCardContentComponent(labelId, contentText) {
-    const lang = document.getElementById('select_language').value;
+  async function createCardContentComponent(lang, labelId, contentText) {
     const root = document.createElement( 'div');
 
     const label = document.createElement( 'label');
@@ -370,6 +369,8 @@
     return root;
   }
   async function createCard(id, member) {
+    const lang = document.getElementById('select_language').value;
+
     const cardRoot = document.createElement( 'div');
     cardRoot.classList.add( 'card');
     cardRoot.setAttribute( 'name', 'member-card');
@@ -389,7 +390,7 @@
     const headerTitle = document.createElement( 'p');
     headerTitle.classList.add( 'card-header-title');
     headerTitle.id = 'card-title';
-    headerTitle.innerText = 'Member-' + id + '[point: ' + member.point + ']';
+    headerTitle.innerText = 'Member-' + id + '[point: ' + member.point + ']';//TODO:
     const headerButton = document.createElement( 'button');
     headerButton.classList.add( 'card-header-icon');
     headerButton.id = 'button-updown';
@@ -412,27 +413,36 @@
     cardHeader.appendChild( headerButton);
 
     if( member.isMech) {
-      const torsoContent = await createCardContentComponent( 'label_torso', member.component.torso.name);
+      const torsoContent = await createCardContentComponent( lang, 'label_torso', member.component.torso.name);
       content.appendChild( torsoContent);
-      const chasisContent = await createCardContentComponent( 'label_chasis', member.component.chasis.name);
+      const chasisContent = await createCardContentComponent( lang, 'label_chasis', member.component.chasis.name);
       content.appendChild( chasisContent);
-      const leftarmContent = await createCardContentComponent( 'label_leftarm', member.component.leftarm.name);
+      const leftarmContent = await createCardContentComponent( lang, 'label_leftarm', member.component.leftarm.name);
       content.appendChild( leftarmContent);
-      const rightarmContent = await createCardContentComponent( 'label_rightarm', member.component.rightarm.name);
+      const rightarmContent = await createCardContentComponent( lang, 'label_rightarm', member.component.rightarm.name);
       content.appendChild( rightarmContent);
-      const backpackContent = await createCardContentComponent( 'label_backpack', member.component.backpack.name);
+      const backpackContent = await createCardContentComponent( lang, 'label_backpack', member.component.backpack.name);
       content.appendChild( backpackContent);
-      const pilotContent = await createCardContentComponent( 'label_pilot', member.component.pilot.name);
+      const pilotContent = await createCardContentComponent( lang, 'label_pilot', member.component.pilot.name);
       content.appendChild( pilotContent);
     }
     else {
-      const pilotContent = await createCardContentComponent( 'label_drone', member.component.drone.name);
+      const pilotContent = await createCardContentComponent( lang, 'label_drone', member.component.drone.name);
       content.appendChild( pilotContent);
-
     }
     cardContent.appendChild( content);
 
-    //TODO: Setup footer content;
+    const footerLinkEdit = document.createElement( 'a');
+    const footerLinkDelete = document.createElement( 'a');
+    footerLinkEdit.classList.add( 'card-footer-item');
+    footerLinkDelete.classList.add( 'card-footer-item');
+    footerLinkEdit.innerText = labelDict[lang].label_edit;
+    footerLinkDelete.innerText = labelDict[lang].label_delete;
+    footerLinkEdit.setAttribute("name", 'label_edit');
+    footerLinkDelete.setAttribute("name", 'label_delete');
+
+    cardFooter.appendChild( footerLinkEdit);
+    cardFooter.appendChild( footerLinkDelete);
 
     cardRoot.appendChild( cardHeader);
     cardRoot.appendChild( cardContent);

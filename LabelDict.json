@@ -12,7 +12,9 @@
         "label_pilot",
         "label_drone",
         "label_squad_point",
-        "button_addSquad"
+        "button_addSquad",
+        "label_edit",
+        "label_delete"
     ],
     "en":{
         "label_faction":"Faction",
@@ -27,7 +29,9 @@
         "label_pilot":"Pilot",
         "label_drone":"Drone",
         "label_squad_point":"PointSum",
-        "button_addSquad":"Add to Squad"
+        "button_addSquad":"Add to Squad",
+        "label_edit":"Edit",
+        "label_delete":"Delete"
     },
     "ja":{
         "label_faction":"勢力",
@@ -42,7 +46,9 @@
         "label_pilot":"パイロット",
         "label_drone":"ドローン",
         "label_squad_point":"ポイント合計",
-        "button_addSquad":"部隊に追加"
+        "button_addSquad":"部隊に追加",
+        "label_edit":"編集",
+        "label_delete":"削除"
     },
     "zh-CN":{
         "label_faction":"Faction",
@@ -57,7 +63,9 @@
         "label_pilot":"Pilot",
         "label_drone":"Drone",
         "label_squad_point":"PointSum",
-        "button_addSquad":"Add to Squad"
+        "button_addSquad":"Add to Squad",
+        "label_edit":"Edit",
+        "label_delete":"Delete"
     },
     "zh-TW":{
         "label_faction":"Faction",
@@ -72,6 +80,8 @@
         "label_pilot":"Pilot",
         "label_drone":"Drone",
         "label_squad_point":"PointSum",
-        "button_addSquad":"Add to Squad"
+        "button_addSquad":"Add to Squad",
+        "label_edit":"Edit",
+        "label_delete":"Delete"
     }
 }
