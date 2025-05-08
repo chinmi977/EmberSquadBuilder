@@ -287,32 +287,10 @@
     const faction = document.getElementById('select_faction').value;
     await changePartsData( language, faction);
 
-    document.getElementsByName( 'label_faction').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_faction').forEach( element => element.innerText = labelDict[language].label_faction);
-    document.getElementsByName( 'label_language').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_language').forEach( element => element.innerText = labelDict[language].label_language);
-    document.getElementsByName( 'label_type').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_type').forEach( element => element.innerText = labelDict[language].label_type);
-    document.getElementsByName( 'label_point').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_point').forEach( element => element.innerText = labelDict[language].label_point);
-    document.getElementsByName( 'label_torso').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_torso').forEach( element => element.innerText = labelDict[language].label_torso);
-    document.getElementsByName( 'label_chasis').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_chasis').forEach( element => element.innerText = labelDict[language].label_chasis);
-    document.getElementsByName( 'label_leftarm').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_leftarm').forEach( element => element.innerText = labelDict[language].label_leftarm);
-    document.getElementsByName( 'label_rightarm').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_rightarm').forEach( element => element.innerText = labelDict[language].label_rightarm);
-    document.getElementsByName( 'label_backpack').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_backpack').forEach( element => element.innerText = labelDict[language].label_backpack);
-    document.getElementsByName( 'label_pilot').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_pilot').forEach( element => element.innerText = labelDict[language].label_pilot);
-    document.getElementsByName( 'label_drone').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_drone').forEach( element => element.innerText = labelDict[language].label_drone);
-    document.getElementsByName( 'label_squad_point').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'label_squad_point').forEach( element => element.innerText = labelDict[language].label_squad_point);
-    document.getElementsByName( 'button_addSquad').forEach( element => element.replaceChildren());
-    document.getElementsByName( 'button_addSquad').forEach( element => element.innerText = labelDict[language].button_addSquad);
+    labelDict.names.forEach( name => {
+      document.getElementsByName( name).forEach( element => element.replaceChildren());
+      document.getElementsByName( name).forEach( element => element.innerText = labelDict[language][name]);
+    });
   }
   async function changeFaction(event){
     const language = document.getElementById('select_language').value;

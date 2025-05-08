@@ -1,4 +1,19 @@
 {
+    "names":[
+        "label_faction",
+        "label_language",
+        "label_type",
+        "label_point",
+        "label_torso",
+        "label_chasis",
+        "label_leftarm",
+        "label_rightarm",
+        "label_backpack",
+        "label_pilot",
+        "label_drone",
+        "label_squad_point",
+        "button_addSquad"
+    ],
     "en":{
         "label_faction":"Faction",
         "label_language":"Language",
