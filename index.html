@@ -507,7 +507,7 @@
       const selected = elem.options[elem.selectedIndex];
       const text = selected.innerText;
       const name = text.substring( 0, text.indexOf( separator) - 1);
-      const point = text.substring( text.indexOf( separator) + separator.length, text.indexOf(')'));
+      const point = text.substring( text.indexOf( separator) + separator.length, text.lastIndexOf(')'));
       const qrid = selected.attributes['qrid'].value;
       console.log( name + '/ ' + point + '/ ' + qrid);
       components.set( id, { qrid: Number( qrid), name: name, point: Number( point)});
