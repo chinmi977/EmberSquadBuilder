@@ -335,17 +335,17 @@
     const elemContainer = document.querySelector( '#container_squad');
     const elemList = elemContainer.querySelector( '#squad_list');
     const elemCard = elemList.querySelector( '#member' + id);
-    const elemButtonUpDown = elemCard.querySelector( '#button-updown');
-    const isUp = elemButtonUpDown.classList.contains( 'fa-angle-up');
+    const elemIconUpDown = elemCard.querySelector( '#button-updown #span-updown #icon-updown');
+    const isUp = elemIconUpDown.classList.contains( 'fa-angle-up');;
     if( isUp) {
-      elemButtonUpDown.classList.remove( 'fa-angle-up');
-      elemButtonUpDown.classList.add( 'fa-angle-down');
+      elemIconUpDown.classList.remove( 'fa-angle-up');
+      elemIconUpDown.classList.add( 'fa-angle-down');
       elemCard.querySelector( '#card-content').classList.remove( 'is-hidden');
       elemCard.querySelector( '#card-footer').classList.remove( 'is-hidden');
     }
     else {
-      elemButtonUpDown.classList.add( 'fa-angle-up');
-      elemButtonUpDown.classList.remove( 'fa-angle-down');
+      elemIconUpDown.classList.add( 'fa-angle-up');
+      elemIconUpDown.classList.remove( 'fa-angle-down');
       elemCard.querySelector( '#card-content').classList.add( 'is-hidden');
       elemCard.querySelector( '#card-footer').classList.add( 'is-hidden');
     }
@@ -414,9 +414,11 @@
     headerButton.id = 'button-updown';
     const buttonSpan = document.createElement( 'span');
     buttonSpan.classList.add( 'icon');
+    buttonSpan.id = 'span-updown';
     const spanText = document.createElement( 'i');
     spanText.classList.add( 'fas');
     spanText.classList.add( 'fa-angle-down');
+    spanText.id = 'icon-updown';
 
     const handlerOpenClose = cardOpenClose.bind( headerButton, id);
     headerButton.addEventListener( 'click', handlerOpenClose);
@@ -472,7 +474,6 @@
     cardRoot.appendChild( cardFooter);
 
     return cardRoot;
-
   }
   async function paintSquadContainer() {
     const pointSum = squadMenbers.reduce((acc, member) => acc + member.point, 0);
@@ -509,7 +510,7 @@
       const name = text.substring( 0, text.indexOf( separator) - 1);
       const point = text.substring( text.indexOf( separator) + separator.length, text.lastIndexOf(')'));
       const qrid = selected.attributes['qrid'].value;
-      console.log( name + '/ ' + point + '/ ' + qrid);
+      //console.log( name + '/ ' + point + '/ ' + qrid);
       components.set( id, { qrid: Number( qrid), name: name, point: Number( point)});
     });
     if( typeValue === 'mech') {

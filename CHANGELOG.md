@@ -13,3 +13,6 @@
 
 - 2025 / 5 / 8  
   - add "Delete" function at "Squad" member.
+
+- 2025 / 5 / 8  
+  - fix change icon when 'cardOpenClose'.
